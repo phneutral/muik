@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* MUIK CSS 2018 */
+
+// This is the master file.
+// It imports all less files in their intended order for easy mass-inclusion.
+// Should you need specific files, you can easily customize the imports.
+
+// IGNITE
+@import "ignite/ignite"; // resets, basics, generic items and mixins.
+
+// Fundamental parts: positioning, type and utilities
+@import "configuration/appconf"; // variables and constants.
+@import "configuration/button"; // customized buttons.
+@import "configuration/message"; // horizontal bars.
+
+@import "framework/framework"; // page wrappers.
+
+// Generic elements: buttons, forms and messages
+@import "elements/item";
+@import "elements/list";
+@import "elements/icon-complex";
+
+// Menus
+@import "objects/topbar";
+@import "objects/modullist";
+@import "objects/tabbar";
+@import "objects/actionbar";
+
+// Objects
+@import "objects/popup"; // popup dialog messages.
+@import "objects/tooltip"; // lightweight tooltips.
+@import "objects/badge"; // badges and marker.
+@import "objects/spinner"; // loading state for ajax requests.
+@import "objects/progress";
+@import "objects/pagination";
+
+// List
+@import "objects/viurtable";
+
+// Edit
+@import "objects/viurform";
+
+
+
+
+
+
