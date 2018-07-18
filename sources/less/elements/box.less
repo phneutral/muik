@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/* Box */
+
+// Prefixes and objects:
+// .box-
+
+.box(
+    @boxBackgroundColor:#fff,
+    @boxMargin: @bottomSpace,
+    @boxBorderWidth: @defaultBorderWidth,
+    @boxBorderRadius: @defaultBorderRadius,
+    @boxShadow: 1,
+    @boxShadowColor: @defaultShadowColor) {
+  background-color:@boxBackgroundColor;
+  .border-radius(@boxBorderRadius);
+  .border(@boxBorderWidth, solid, darken(@boxBackgroundColor,20%));
+  .boxShadow(@boxShadow, @boxShadowColor);
+  margin-bottom: @boxMargin;
+  &-head {
+    background-color: darken(@boxBackgroundColor,5%);
+    .border(@boxBorderWidth, solid, darken(@boxBackgroundColor,20%));
+    margin: -@boxBorderWidth -@boxBorderWidth 0 -@boxBorderWidth;
+    border-top-left-radius: @boxBorderRadius;
+    border-top-right-radius: @boxBorderRadius;
+  }
+  &-body {
+  }
+  &-foot {
+    margin-top: -@boxBorderWidth;
+    border-top: @boxBorderWidth solid darken(@boxBackgroundColor,20%);
+  }
+}

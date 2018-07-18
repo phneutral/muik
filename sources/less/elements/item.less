@@ -1,5 +1,7 @@
 @charset "UTF-8";
-/* Vi Item */
+/* Item */
+
+//
 
 // Prefixes and objects:
 // .item-
@@ -13,7 +15,7 @@
   display:flex;
   flex:0 0 auto;
   color: @textColor;
-  cursor: pointer;
+  align-items: center;
   a&,
   & a {
     color:inherit;
@@ -43,7 +45,6 @@
     flex-basis:100%;
   }
   &-image {
-    align-self: center;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +52,6 @@
   }
   &-content {
     flex:1;
-    align-self: center;
     margin: 3px 13px;
   }
   &-headline {
@@ -65,7 +65,6 @@
     font-size:.9em;
   }
   &-action {
-    align-self: center;
     padding-left: @defaultPadding*1.25;
     padding-right: @defaultPadding*1.25;
     color: @complementColor;
@@ -94,7 +93,7 @@
     }
     .item.is-active &:hover,
     .item &:hover {
-      background-color: lighten(@failColor,10%);
+      background-color: lighten(@hintColor,10%);
       color: #fff;
     }
   }

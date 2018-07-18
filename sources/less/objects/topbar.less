@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* TOPBAR */
+
+// Prefixes and objects:
+// .topbar-
+
+.topbar {
+  display: flex;
+  min-height:50px;
+  border-bottom: 2px solid @mainColor;
+  .boxShadow(1, #000);
+  .zIndex('nav',50);
+
+  & .item:not(:first-of-type) .item-content {
+    margin-left: 6.5px;
+  }
+
+  &-logo {
+    background: @mainColor;
+    color:#fff;
+    width: ~"calc(2.5rem + 3.75px)";
+    height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    & svg {
+      width:75%;
+      height: 75%;
+      fill:currentcolor;
+    }
+  }
+
+  &-title {
+    font-weight: 600;
+    color: @mainColor;
+  }
+}
+

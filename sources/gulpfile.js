@@ -7,8 +7,6 @@ var appDescription = 'This is my application';
 var developerName = 'Mausbrand Infosys';
 var developerURL = 'http://mausbrand.de/';
 
-var backgroundColor = '#fff'; // Background color of app icons.
-
 var srcpaths = {
   less: './less/**/*.less',
   images: './images/**/*',
@@ -128,4 +126,4 @@ gulp.task('watch', function () {
    gulp.watch(srcpaths.images, ['images']);
 });
 
-gulp.task('default', ['css', 'icons', 'images']);
+gulp.task('default', gulp.series(['css', 'icons', 'images']));
