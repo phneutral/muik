@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* BUTTONS */
+
+// Prefixes and objects:
+// .btn-
+// .btnGroup
+
+.box {
+  .box(
+    @borderRadius:0;
+  );
+  &--hint {
+    .colorizeBox(
+    @color: @hintColor,
+    @shadow: @defaultShadow,
+    @shadowColor: @hintColor);
+  }
+}
+

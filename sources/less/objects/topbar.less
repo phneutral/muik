@@ -6,8 +6,9 @@
 
 .topbar {
   display: flex;
-  min-height:50px;
+  min-height:@topbarHeight;
   border-bottom: 2px solid @mainColor;
+  background: #fff;
   .boxShadow(1, #000);
   .zIndex('nav',50);
 
@@ -19,7 +20,6 @@
     background: @mainColor;
     color:#fff;
     width: ~"calc(2.5rem + 3.75px)";
-    height: 100%;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +31,7 @@
   }
 
   &-title {
-    font-weight: 600;
+    font-weight: 700;
     color: @mainColor;
   }
 }

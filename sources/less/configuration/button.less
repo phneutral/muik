@@ -10,17 +10,35 @@
     @btnBackgroundColor:#fff,
     @btnPadding: @defaultPadding,
     @btnMargin: @defaultMargin,
-    @btnBorderWidth: 0,
-    @btnBorderRadius: 4px,
-    @btnShadow: 0,
-    @btnShadowHover: 1,
+    @btnBorderWidth: @defaultBorderWidth,
+    @btnBorderRadius: @defaultBorderRadius,
+    @btnShadow: @defaultShadow,
+    @btnShadowHover: @defaultShadowHover,
     @btnShadowColor: @defaultShadowColor);
 }
 
-.btn-vPrimary {
+.btn--primary {
   .colorizeBtn(
-    @backgroundColor: @successColor,
-    @btnBorderWidth: 0,
-    @btnShadow: 0,
-    @btnShadowHover: 1);
+    @btnBackgroundColor: @mainColor,
+    @btnBorderWidth: @defaultBorderWidth,
+    @btnShadow: @defaultShadow,
+    @btnShadowHover: @defaultShadowHover);
+}
+
+.btn--edit {
+  .invertColorizedBtn(
+    @btnBackgroundColor: @hintColor,
+    @btnBorderWidth: @defaultBorderWidth,
+    @btnShadow: @defaultShadow,
+    @btnShadowHover: @defaultShadowHover
+  )
+}
+
+.btn--danger {
+  .invertColorizedBtn(
+    @btnBackgroundColor: @failColor,
+    @btnBorderWidth: @defaultBorderWidth,
+    @btnShadow: @defaultShadow,
+    @btnShadowHover: @defaultShadowHover
+  )
 }

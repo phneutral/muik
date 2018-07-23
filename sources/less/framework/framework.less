@@ -16,8 +16,16 @@ html {
   .zIndex('background',0);
 }
 
+.main-frame {
+  width: 100%;
+  display: flex;
+  flex-basis: 100%;
+}
+
 .viewer-frame {
-  flex:1 80%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 80%;
   display: flex;
   flex-direction: column;
   overflow-x:hidden;
@@ -26,6 +34,10 @@ html {
 }
 
 .manager-frame {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 20%;
+  max-width: 370px;
+  min-width: 250px;
   .zIndex('nav',40);
-  height: fit-content;
 }
