@@ -25,6 +25,7 @@
     align-items: center;
     justify-content: center;
     align-self: stretch;
+    height: 100%;
     & svg {
       width:75%;
       height: 75%;
@@ -33,12 +34,8 @@
   }
 
   &-title {
-    display:none;
-    .mq-min(@breakSmall,{
-      display: inherit;
-      font-weight: 700;
-      color: @mainColor;
-    });
+    font-weight: 700;
+    color: @mainColor;
   }
 }
 

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* LOADING */
+
+.is-loading:not(i) {
+  animation: loader-opacity 1.5s infinite ease-in-out both;
+}
+
+@keyframes loader-opacity {
+  0%, 80%, 100% {
+    opacity: 0.4;
+  } 40% {
+    opacity: 1;
+  }
+}
