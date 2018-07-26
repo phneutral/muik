@@ -6,9 +6,10 @@
 
 .topbar {
   display: flex;
-  min-height:@topbarHeight;
+  height: @topbarHeight;
   border-bottom: 2px solid @mainColor;
   background: #fff;
+  padding-right: 10px;
   .boxShadow(1, #000);
   .zIndex('nav',50);
 
@@ -23,6 +24,7 @@
     display:flex;
     align-items: center;
     justify-content: center;
+    align-self: stretch;
     & svg {
       width:75%;
       height: 75%;
@@ -31,8 +33,12 @@
   }
 
   &-title {
-    font-weight: 700;
-    color: @mainColor;
+    display:none;
+    .mq-min(@breakSmall,{
+      display: inherit;
+      font-weight: 700;
+      color: @mainColor;
+    });
   }
 }
 

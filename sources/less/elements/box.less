@@ -12,13 +12,12 @@
     @borderRadius: @defaultBorderRadius,
     @shadow: @defaultShadow,
     @shadowColor: @defaultShadowColor) {
+  display: flex;
+  flex-direction: column;
   background-color: lighten(@color,20%);
   .border-radius(@borderRadius);
   .border(@borderWidth, solid, @color);
   .boxShadow(@shadow, @shadowColor);
-  &:not(:last-child){
-    margin-bottom: @bottomSpace;
-  }
   &-head {
     display: flex;
     flex-direction: column;

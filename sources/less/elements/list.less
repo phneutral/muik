@@ -10,40 +10,37 @@
   flex-direction: column;
   justify-content: flex-start;
   background-color:#fff;
+  & * + .item,
+  * + & {
+    border-top: 1px solid #dadad9;
+  }
   & .item {
-    border-bottom: 1px solid #dadad9;
     &.is-active {
       border-bottom-color: transparent;
     }
   }
   &-separator {
-    min-height: 40px;
-    background-color: #f5f5f5;
+    font-weight: 300;
+    background-color: darken(@backgroundColor,10%);
     font-size:.9em;
     padding: @defaultPadding @defaultPadding*1.25;
     display:flex;
     flex:0 0 auto;
-    border-bottom: 1px solid #dadad9;
+    border-bottom: 1px solid darken(@backgroundColor,20%);
     color: @textColor;
+  }
+  &--sub {
+    & .item {
+      .colorizeItem(
+        @backgroundColor: darken(@itemBackgroundColor,5%);
+        @activeBackgroundColor: @mainColor;
+        @actionBackgroundColor: @complementColor;
+        );
+      &-content {
+        font-size: .9em;
+      }
+    }
   }
 }
 
-.sublist {
-  & .item {
-    background-color: darken(@itemBackgroundColor,5%);
-    font-size: .7em;
-    min-height:38px;
-    &:hover {
-      background-color: darken(@itemBackgroundColor,10%);
-    }
-  }
-  & i {
-    height: 1.6em;
-    width: 1.6em;
-      & svg,
-      & img {
-        width: 90%;
-        height: 90%;
-      }
-  }
-}
+

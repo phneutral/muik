@@ -16,12 +16,17 @@
   cursor: auto;
   border: 0;
   text-align:left;
-  background-color:@backgroundColor;
+  background-color: transparent;
   padding:@padding @padding*1.25;
   display:flex;
   flex:0 0 auto;
   color: @textColor;
   align-items: center;
+  align-self: stretch;
+  min-height:35px;
+  & * + * {
+    margin-left: @innerSpace;
+  }
   a&,
   & a,
   a&:hover,
@@ -37,6 +42,8 @@
     align-items: center;
     justify-content: center;
     width: 2.5rem;
+    margin-top: 3px;
+    margin-bottom: 3px;
   }
   & i {
     color: contrast(@activeBackgroundColor);
@@ -44,22 +51,30 @@
   }
   &-content {
     flex:1;
-    margin: 3px 13px;
-  }
-  &-headline {
-    font-weight: 300;
-    line-height: 1;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    & > * {
+      margin-left: 0;
+    }
   }
   &-subline {
     font-size: .75em;
   }
   &-subline + &-headline {
-    font-size:.9em;
+    font-size: .9em;
+  }
+  &-descr {
+    font-size: .9em;
+    font-weight: 300;
   }
   &-controls {
+    margin-left: auto;
+    padding-left: @padding*1.25;
+    padding-right: @padding*1.25;
     display: flex;
   }
   &-action {
+    margin-left: auto;
     padding-left: @padding*1.25;
     padding-right: @padding*1.25;
     color: @actionBackgroundColor;
