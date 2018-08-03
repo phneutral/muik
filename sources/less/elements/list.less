@@ -31,11 +31,27 @@
   }
   &--sub {
     & .item {
-      .colorizeItem(
-        @backgroundColor: darken(@itemBackgroundColor,5%);
-        @activeBackgroundColor: @mainColor;
-        @actionBackgroundColor: @complementColor;
-        );
+      background-color: @backgroundColor;
+      color: darken(@backgroundColor, 50%);
+      &.has-hover {
+        &:hover {
+          color: contrast(darken(@backgroundColor, 5%));
+          background-color: darken(@backgroundColor, 5%);
+        }
+      }
+      &.is-disabled {
+        color: darken(@backgroundColor, 40%) !important;
+        background-color: darken(@backgroundColor, 15%) !important;
+        & i {
+          background-color: darken(@backgroundColor, 25%) !important;
+        }
+      }
+      &.is-disabled .item-action,
+      &.is-disabled:hover .item-action,
+      &.is-disabled .item-action:hover {
+        color: darken(@backgroundColor, 20%);
+        background: transparent;
+      }
       &-content {
         font-size: .9em;
       }

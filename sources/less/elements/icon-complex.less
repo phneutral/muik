@@ -9,8 +9,8 @@ i {
   width: 2em;
   line-height: 2;
   background-color: @complementColor;
+  color: contrast(@complementColor);
   border-radius: .4em;
-  color: #fff;
   text-align: center;
   font-weight: 700;
   font-size: 1.2em;
@@ -19,12 +19,17 @@ i {
   align-items: center;
   justify-content: center;
   & svg,
-  & img {
+  & img,
+  & .icon {
     width: 75%;
     height: 75%;
     border-radius: @defaultBorderRadius;
   }
   &.is-loading {
+    .icon {
+      width: 1em;
+      height: 1em;
+    }
     & rect {
       animation: spin-square-ani 1s infinite ease-in-out both;
       &:nth-of-type(1n) {
@@ -42,6 +47,19 @@ i {
       }
     }
   }
+  &.i--small {
+    font-size: .7em;
+    & svg,
+    & img {
+      width: 85%;
+      height: 85%;
+    }
+  }
+}
+
+.colorizeI(@color:@mainColor) {
+  background-color: @color;
+  color: contrast(@color);
 }
 
 @keyframes spin-square-ani {
@@ -49,14 +67,5 @@ i {
     fill-opacity: 0.2;
   } 40% {
     fill-opacity: 1;
-  }
-}
-
-i.i--small {
-  font-size: .7em;
-  & svg,
-  & img {
-    width: 85%;
-    height: 85%;
   }
 }

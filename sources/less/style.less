@@ -15,15 +15,18 @@
 //@import "configuration/in-palette";
 @import "configuration/dt-palette";
 
+@import "framework/framework"; // page wrappers.
+
 // Fundamental parts: positioning, type and utilities
 @import "configuration/appconf"; // variables and constants.
 @import "configuration/button"; // customized buttons.
-@import "configuration/message"; // horizontal bars.
-@import "configuration/box";
-@import "configuration/item";
-@import "configuration/badge";
+@import "configuration/box"; // the box.
+@import "configuration/item"; // the item: [ icon | content | action ]
+@import "configuration/badge"; // marker and badges.
+@import "configuration/progress"; // progress bar.
+@import "configuration/icon-complex"; // a square that can house svg icons or uppercase letters als icons.
+//@import "configuration/message"; // alerts and messages.
 
-@import "framework/framework"; // page wrappers.
 
 // Generic elements: buttons, forms and messages
 @import "elements/item";
@@ -43,8 +46,8 @@
 @import "objects/popout"; // dialog message that is bound to an object.
 @import "objects/conversation"; // chat-like messages.
 @import "objects/tooltip"; // lightweight tooltips.
-@import "elements/badge"; // badges and marker.
-//@import "objects/progress";
+@import "objects/progress"; // progress bars.
+@import "objects/alert"; // alert messages.
 //@import "objects/pagination";
 
 // Status
@@ -55,9 +58,5 @@
 
 // Edit
 //@import "objects/viurform";
-
-
-
-
 
 

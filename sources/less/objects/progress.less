@@ -4,86 +4,65 @@
 // Prefixes and objects:
 // .progress-
 
-// Colors:
-@progressBackground: lighten(@complementColor,60%);
-@progressDefault: @complementColor;
-@progressPrimary: @successColor;
-@progressInfo: @hintColor;
-@progressWarning: @warnColor;
-@progressDanger: @failColor;
-
-.progress {
-  appearance: none;
-  border: none;
-  border-radius: .2em;
-  display: block;
-  height: 1rem;
+.progress(
+  @color: @mainColor,
+  @backgroundColor: @defaultInputColor,
+  @borderWidth: @defaultBorderWidth,
+  @borderRadius: @defaultBorderRadius) {
+  .basicInput(@padding:0, @borderRadius:@borderRadius, @borderWidth:@borderWidth, @borderColor:#ccc);
   overflow: hidden;
-  padding: 0;
   width: 100%;
-
+  &:before {
+    content: attr(value) ' %';
+    position: absolute;
+    right: 10px;
+    color: @color;
+    text-shadow:1px 1px contrast(@color);
+    font-weight: 600;
+    font-size: .5em;
+    align-self: center;
+  }
   &:not(:last-child) {
     margin-bottom: 1em;
   }
+  &:not([value="1"]){
+    cursor: progress!important;
+    &::-webkit-progress-value {
+      animation: progress-color .75s infinite ease-in-out both;
+    }
+  }
+
+  &::-webkit-progress-bar {
+    background-color: darken(@backgroundColor,10%);
+  }
+
+  &::-webkit-progress-value {
+    background-color: @color;
+    transition: 1s ease-in-out all;
+    border-top-left-radius: @borderRadius;
+    border-bottom-left-radius: @borderRadius;
+  }
+
+  &::-moz-progress-bar {
+    background-color: @color;
+  }
+
+  &--small {
+    height: .6rem;
+  }
+  &--medium {
+    height: 1.4rem;
+  }
+  &--large {
+    height: 1.8rem;
+  }
 }
 
-.progress::-webkit-progress-bar {
-  background-color: @progressBackground;
+@keyframes progress-color {
+  0%, 100% {
+    opacity: 1;
+  } 50% {
+    opacity: .75;
+  }
 }
 
-.progress::-webkit-progress-value {
-  background-color: @progressDefault;
-  transition: 1s ease-in-out all;
-}
-
-.progress::-moz-progress-bar {
-  background-color: @progressDefault;
-}
-
-
-.progress-vPrimary::-webkit-progress-value {
-  background-color: @progressPrimary;
-}
-
-.progress-vPrimary::-moz-progress-bar {
-  background-color: @progressPrimary;
-}
-
-
-.progress-vInfo::-webkit-progress-value {
-  background-color: @progressInfo;
-}
-
-.progress-vInfo::-moz-progress-bar {
-  background-color: @progressInfo;
-}
-
-.progress-vWarning::-webkit-progress-value {
-  background-color: @progressWarning;
-}
-
-.progress-vWarning::-moz-progress-bar {
-  background-color: @progressWarning;
-}
-
-
-.progress-vDanger::-webkit-progress-value {
-  background-color: @progressDanger;
-}
-
-.progress-vDanger::-moz-progress-bar {
-  background-color: @progressDanger;
-}
-
-
-.progress-vSmall {
-  height: .6rem;
-}
-
-.progress-vMedium {
-  height: 1.4rem;
-}
-
-.progress-vLarge {
-  height: 1.8rem;
-}

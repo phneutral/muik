@@ -60,9 +60,9 @@
   }
 }
 
-.tip-vMultiline:hover,
-.tip-vMultiline:active,
-.tip-vMultiline:focus {
+.tip--multiline:hover,
+.tip--multiline:active,
+.tip--multiline:focus {
   &:after {
     display: table-cell;
   }
@@ -174,10 +174,10 @@
 
 // Multiline tooltips
 //
-// ».tip-vMultiline« Add this class when you have long content.
+// ».tip--multiline« Add this class when you have long content.
 // The downside is you cannot preformat the text with newlines and »[w,e]«
 // are always »@tipMultilineMaxwidth« wide.
-.tip-vMultiline {
+.tip--multiline {
   &:after {
     width: max-content;
     max-width: @tipMultilineMaxwidth;
@@ -203,13 +203,13 @@
 // Sticky tooltips
 //
 // Always show the tooltip.
-.tip-vSticky {
+.tip--sticky {
   &:before,
   &:after {
     display: inline-block;
   }
 
-  &.tip-vMultiline {
+  &.tip--multiline {
     &:after {
       display: table-cell;
     }

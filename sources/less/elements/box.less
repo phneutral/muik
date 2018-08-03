@@ -13,6 +13,7 @@
     @shadow: @defaultShadow,
     @shadowColor: @defaultShadowColor) {
   display: flex;
+  max-height: 100%;
   flex-direction: column;
   background-color: lighten(@color,20%);
   .border-radius(@borderRadius);
@@ -32,11 +33,14 @@
     }
   }
   &-body {
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   &-content {
     margin: @innerSpace;
   }
   &-foot:not(:empty) {
+    .zIndex('content', 1);
     margin-top: -@borderWidth;
     border-top: @borderWidth solid @color;
   }
@@ -46,11 +50,11 @@
     @color: #ccc,
     @shadow: @defaultShadow,
     @shadowColor: @defaultShadowColor) {
-  background-color: lighten(@color,20%);
+  background-color: lighten(@color,40%);
   border-color: @color;
   .boxShadow(@shadow, @shadowColor);
   & .box-head {
-    background-color: lighten(@color, 15%);
+    background-color: lighten(@color, 20%);
     border-color: @color;
   }
   & .box-foot:not(:empty) {
