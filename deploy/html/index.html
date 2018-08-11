@@ -14,7 +14,7 @@
 	<!-- Favicon -->
 	<link rel="icon" href="static/images/favicon.png" type="image/png"/>
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
-	<link rel="stylesheet" href="../static/css/style.css?v=160"/>
+	<link rel="stylesheet" href="../static/css/style.css?v=170"/>
 
 </head>
 
@@ -47,12 +47,12 @@
 							Descr
 						</div>
 					</div>
-					<div class="item-action item-action--small">
-						&times;
+					<div class="item-controls">
+						<span class="delete"></span>
 					</div>
 				</div>
 			</div>
-			<div class="btn badge-attr popout-s popout-anchor popout-opener is-active" data-badge="2">Hinweise
+			<div class="btn badge-attr popout-s popout-anchor popout-opener" data-badge="2">Hinweise
 				<div class="popout">
 					<div class="box alert">
 						<header class="box-head">
@@ -84,8 +84,8 @@
 											Descr
 										</div>-->
 									</div>
-									<div class="item-action">
-										&times;
+									<div class="item-controls">
+										<span class="delete"></span>
 									</div>
 								</button>
 								<button class="item">
@@ -149,39 +149,39 @@
 			<button class="btn">Abmelden</button>
 		</nav>
 	</div>
-								<div class="popup-overlay"></div>
+	<div class="popup popup-n">
+		<div class="box">
+			<header class="box-head">
+				<button class="item">
+					<i class="i--small i--warn">
+						B
+					</i>
+					<div class="item-content">
+						<div class="item-headline">
+							Headline
+						</div>
+						<!--<div class="item-descr">
+							Descr
+						</div>-->
+					</div>
+					<div class="item-controls">
+						<span class="delete"></span>
+					</div>
+				</button>
+			</header>
+			<div class="box-body">
+				<div class="box-content">
+					<div class="input-group">
+						<label class="label">test</label>
+						<input class="input" type="text">
+					</div>
+				</div>
+			</div>
+			<footer class="box-foot"></footer>
+		</div>
+	</div>
+	<div class="popup-overlay"></div>
 
-								<div class="popup popup-n">
-									<div class="box">
-										<header class="box-head">
-											<button class="item">
-												<i class="i--small i--warn">
-													B
-												</i>
-												<div class="item-content">
-													<div class="item-headline">
-														Headline
-													</div>
-													<!--<div class="item-descr">
-														Descr
-													</div>-->
-												</div>
-												<div class="item-action">
-													&times;
-												</div>
-											</button>
-										</header>
-										<div class="box-body">
-											<div class="box-content">
-												<div class="input-group">
-													<label class="label">test</label>
-													<input class="input" type="text">
-												</div>
-											</div>
-										</div>
-										<footer class="box-foot"></footer>
-									</div>
-								</div>
 
 
 
@@ -215,7 +215,7 @@
 								</div>
 							</div>
 							<div class="item-controls">
-								<span class="marker">2</span>
+								<span class="delete"></span>
 							</div>
 						</button>
 						<button class="item has-hover">
@@ -372,17 +372,21 @@
 							<option>Französisch</option>
 						</select>
 						<button class="btn btn--small" type="button">Felder hinzufügen</button>
-						<button class="btn btn--small js-opensearch" type="button">Suche</button>
+						<label class="btn btn--small popout-anchor popout-sw popout-opener" for="actionbar-search">Suche
+						<div class="popout">
+							<div class="box">
+								<div class="input-group box-content">
+									<input id="actionbar-search" class="input input--small" type="text" placeholder="Suchbegriff...">
+									<button class="btn btn--small btn--primary" type="button" title="Hinzufügen">Los</button>
+								</div>
+							</div>
+						</div>
+						</label>
 					</div>
 				</div>
 			</div>
 
-				<div class="searchbar">
-					<div class="input-group">
-						<input class="input input--small" type="text" placeholder="Suchbegriff...">
-						<button class="btn btn--small btn--primary" type="button" title="Hinzufügen">Los</button>
-					</div>
-				</div>
+
 
 				<div class="wrap">
 
@@ -418,8 +422,9 @@
 												Headline der Nachricht
 											</div>
 										</div>
-										<div class="item-controls">
+										<div class="item-controls input-group">
 											<button class="btn btn--small">Details</button>
+											<button class="btn btn--small">Gelesen</button>
 										</div>
 									</div>
 								</div>

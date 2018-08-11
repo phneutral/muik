@@ -19,6 +19,7 @@ i {
     .colorizeI(@color:@hintColor);
   }
   &.i--portal {
+    background-color: @mainColor; // provides fallback.
     background-color: ~'var(--portal-color)';
     color: @clearColor;
   }
