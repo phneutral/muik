@@ -16,7 +16,8 @@
   background:fadeout(@clearColor,100%);
   transition: all .3s ease;
   .zIndex('background',-1);
-  &.is-active {
+  &.is-active,
+  .popup.is-active ~ & {
     pointer-events: auto;
     opacity: .7;
     background:fadeout(@clearColor,10%);

@@ -662,29 +662,9 @@ ol.is-list {
 	align-items: center;
 }
 
+* + .bar-group,
 .bar-group > * + * {
 	margin-top: 10px;
-}
-
-.bar-group--left {
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-}
-
-.bar-group--center {
-	-ms-flex-pack: center;
-	justify-content: center;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.bar-group--right {
-	-ms-flex-pack: end;
-	justify-content: flex-end;
-}
-
-.bar-group--right:first-child {
-	margin-left: auto;
 }
 
 .input {
@@ -715,12 +695,16 @@ ol.is-list {
 	background-repeat: no-repeat;
 }
 
+.input-group.is-invalid .form-group--validation .input,
 .input-group.is-invalid .input-group--validation .input,
 .input-group.is-invalid .input--validation,
+.form-group--validation .input.is-invalid,
 .input-group--validation .input.is-invalid,
 .input--validation.is-invalid,
+.form-group--validation .input[aria-invalid="true"],
 .input-group--validation .input[aria-invalid="true"],
 .input--validation[aria-invalid="true"],
+.form-group--validation .input:invalid:not(:placeholder-shown),
 .input-group--validation .input:invalid:not(:placeholder-shown),
 .input--validation:invalid:not(:placeholder-shown) {
 	color: #880f11;
@@ -730,12 +714,16 @@ ol.is-list {
 	background-position: 95% center;
 }
 
+.input-group.is-invalid .form-group--validation .input:focus,
 .input-group.is-invalid .input-group--validation .input:focus,
 .input-group.is-invalid .input--validation:focus,
+.form-group--validation .input.is-invalid:focus,
 .input-group--validation .input.is-invalid:focus,
 .input--validation.is-invalid:focus,
+.form-group--validation .input[aria-invalid="true"]:focus,
 .input-group--validation .input[aria-invalid="true"]:focus,
 .input--validation[aria-invalid="true"]:focus,
+.form-group--validation .input:invalid:not(:placeholder-shown):focus,
 .input-group--validation .input:invalid:not(:placeholder-shown):focus,
 .input--validation:invalid:not(:placeholder-shown):focus {
 	color: #222222;
@@ -744,8 +732,10 @@ ol.is-list {
 	background-position: 150% center;
 }
 
+.input-group.is-recommended .form-group--validation .input,
 .input-group.is-recommended .input-group--validation .input,
 .input-group.is-recommended .input--validation,
+.form-group--validation .input.is-recommended,
 .input-group--validation .input.is-recommended,
 .input--validation.is-recommended {
 	color: #592d59;
@@ -755,8 +745,10 @@ ol.is-list {
 	background-position: 95% center;
 }
 
+.input-group.is-recommended .form-group--validation .input:focus,
 .input-group.is-recommended .input-group--validation .input:focus,
 .input-group.is-recommended .input--validation:focus,
+.form-group--validation .input.is-recommended:focus,
 .input-group--validation .input.is-recommended:focus,
 .input--validation.is-recommended:focus {
 	color: #222222;
@@ -765,12 +757,16 @@ ol.is-list {
 	background-position: 150% center;
 }
 
+.input-group.is-valid .form-group--validation .input,
 .input-group.is-valid .input-group--validation .input,
 .input-group.is-valid .input--validation,
+.form-group--validation .input.is-valid,
 .input-group--validation .input.is-valid,
 .input--validation.is-valid,
+.form-group--validation .input[aria-invalid="false"],
 .input-group--validation .input[aria-invalid="false"],
 .input--validation[aria-invalid="false"],
+.form-group--validation .input:valid:not(:placeholder-shown):not([type="password"]),
 .input-group--validation .input:valid:not(:placeholder-shown):not([type="password"]),
 .input--validation:valid:not(:placeholder-shown):not([type="password"]) {
 	color: #34762d;
@@ -780,12 +776,16 @@ ol.is-list {
 	background-position: 95% center;
 }
 
+.input-group.is-valid .form-group--validation .input:focus,
 .input-group.is-valid .input-group--validation .input:focus,
 .input-group.is-valid .input--validation:focus,
+.form-group--validation .input.is-valid:focus,
 .input-group--validation .input.is-valid:focus,
 .input--validation.is-valid:focus,
+.form-group--validation .input[aria-invalid="false"]:focus,
 .input-group--validation .input[aria-invalid="false"]:focus,
 .input--validation[aria-invalid="false"]:focus,
+.form-group--validation .input:valid:not(:placeholder-shown):not([type="password"]):focus,
 .input-group--validation .input:valid:not(:placeholder-shown):not([type="password"]):focus,
 .input--validation:valid:not(:placeholder-shown):not([type="password"]):focus {
 	color: #222222;
@@ -900,8 +900,10 @@ ol.is-list {
 	content: '\00a0*';
 }
 
+.input-group.is-invalid .form-group--validation .label,
 .input-group.is-invalid .input-group--validation .label,
 .input-group.is-invalid .label--validation,
+.form-group--validation .label.is-invalid,
 .input-group--validation .label.is-invalid,
 .label--validation.is-invalid {
 	color: #5a0a0b;
@@ -909,8 +911,10 @@ ol.is-list {
 	background-color: #ed5c5e;
 }
 
+.input-group.is-recommended .form-group--validation .label,
 .input-group.is-recommended .input-group--validation .label,
 .input-group.is-recommended .label--validation,
+.form-group--validation .label.is-recommended,
 .input-group--validation .label.is-recommended,
 .label--validation.is-recommended {
 	color: #371c37;
@@ -918,8 +922,10 @@ ol.is-list {
 	background-color: #bd7bbd;
 }
 
+.input-group.is-valid .form-group--validation .label,
 .input-group.is-valid .input-group--validation .label,
 .input-group.is-valid .label--validation,
+.form-group--validation .label.is-valid,
 .input-group--validation .label.is-valid,
 .label--validation.is-valid {
 	color: #23511f;
@@ -994,12 +1000,16 @@ ol.is-list {
 	background-color: #f2f2f2;
 }
 
+.input-group.is-invalid .form-group--validation .select,
 .input-group.is-invalid .input-group--validation .select,
 .input-group.is-invalid .select--validation,
+.form-group--validation .select.is-invalid,
 .input-group--validation .select.is-invalid,
 .select--validation.is-invalid,
+.form-group--validation .select[aria-invalid="true"],
 .input-group--validation .select[aria-invalid="true"],
 .select--validation[aria-invalid="true"],
+.form-group--validation .select:invalid,
 .input-group--validation .select:invalid,
 .select--validation:invalid {
 	color: #880f11;
@@ -1007,12 +1017,16 @@ ol.is-list {
 	background-color: #f7b8b9;
 }
 
+.input-group.is-invalid .form-group--validation .select:focus,
 .input-group.is-invalid .input-group--validation .select:focus,
 .input-group.is-invalid .select--validation:focus,
+.form-group--validation .select.is-invalid:focus,
 .input-group--validation .select.is-invalid:focus,
 .select--validation.is-invalid:focus,
+.form-group--validation .select[aria-invalid="true"]:focus,
 .input-group--validation .select[aria-invalid="true"]:focus,
 .select--validation[aria-invalid="true"]:focus,
+.form-group--validation .select:invalid:focus,
 .input-group--validation .select:invalid:focus,
 .select--validation:invalid:focus {
 	color: #222222;
@@ -1020,10 +1034,13 @@ ol.is-list {
 	background-color: #fff;
 }
 
+.input-group.is-valid .form-group--validation .select,
 .input-group.is-valid .input-group--validation .select,
 .input-group.is-valid .select--validation,
+.form-group--validation .select.is-valid,
 .input-group--validation .select.is-valid,
 .select--validation.is-valid,
+.form-group--validation .select:valid,
 .input-group--validation .select:valid,
 .select--validation:valid {
 	color: #34762d;
@@ -1031,10 +1048,13 @@ ol.is-list {
 	background-color: #d1eccf;
 }
 
+.input-group.is-valid .form-group--validation .select:focus,
 .input-group.is-valid .input-group--validation .select:focus,
 .input-group.is-valid .select--validation:focus,
+.form-group--validation .select.is-valid:focus,
 .input-group--validation .select.is-valid:focus,
 .select--validation.is-valid:focus,
+.form-group--validation .select:valid:focus,
 .input-group--validation .select:valid:focus,
 .select--validation:valid:focus {
 	color: #222222;
@@ -1344,7 +1364,7 @@ ol.is-list {
 	flex-direction: column;
 }
 
-.input-group :not(:last-child) {
+.input-group:not(:last-child) {
 	margin-bottom: 20px;
 }
 
@@ -1356,10 +1376,84 @@ ol.is-list {
 .input-group > .radio,
 .input-group > .check,
 .input-group .option-group {
+	z-index: 200;
 	width: 100%;
 	margin: 0;
 	position: relative;
 	box-shadow: none;
+}
+
+.input-group .select:hover,
+.input-group .input:hover,
+.input-group .btn:hover,
+.input-group .switch:hover,
+.input-group .textarea:hover,
+.input-group > .radio:hover,
+.input-group > .check:hover,
+.input-group .option-group:hover,
+.input-group .select:active,
+.input-group .input:active,
+.input-group .btn:active,
+.input-group .switch:active,
+.input-group .textarea:active,
+.input-group > .radio:active,
+.input-group > .check:active,
+.input-group .option-group:active,
+.input-group .select.is-selected,
+.input-group .input.is-selected,
+.input-group .btn.is-selected,
+.input-group .switch.is-selected,
+.input-group .textarea.is-selected,
+.input-group > .radio.is-selected,
+.input-group > .check.is-selected,
+.input-group .option-group.is-selected,
+.input-group .select:focus,
+.input-group .input:focus,
+.input-group .btn:focus,
+.input-group .switch:focus,
+.input-group .textarea:focus,
+.input-group > .radio:focus,
+.input-group > .check:focus,
+.input-group .option-group:focus {
+	z-index: 202;
+}
+
+.input-group .select:focus,
+.input-group .input:focus,
+.input-group .btn:focus,
+.input-group .switch:focus,
+.input-group .textarea:focus,
+.input-group > .radio:focus,
+.input-group > .check:focus,
+.input-group .option-group:focus {
+	z-index: 203;
+}
+
+.input-group .select.is-disabled,
+.input-group .input.is-disabled,
+.input-group .btn.is-disabled,
+.input-group .switch.is-disabled,
+.input-group .textarea.is-disabled,
+.input-group > .radio.is-disabled,
+.input-group > .check.is-disabled,
+.input-group .option-group.is-disabled,
+.input-group .select.is-disabled:hover,
+.input-group .input.is-disabled:hover,
+.input-group .btn.is-disabled:hover,
+.input-group .switch.is-disabled:hover,
+.input-group .textarea.is-disabled:hover,
+.input-group > .radio.is-disabled:hover,
+.input-group > .check.is-disabled:hover,
+.input-group .option-group.is-disabled:hover,
+.input-group .select.is-disabled:focus,
+.input-group .input.is-disabled:focus,
+.input-group .btn.is-disabled:focus,
+.input-group .switch.is-disabled:focus,
+.input-group .textarea.is-disabled:focus,
+.input-group > .radio.is-disabled:focus,
+.input-group > .check.is-disabled:focus,
+.input-group .option-group.is-disabled:focus {
+	z-index: 200 !important;
 }
 
 .input-group .label {
@@ -1396,11 +1490,6 @@ ol.is-list {
 	stroke: none;
 }
 
-.oContent {
-	-ms-flex-order: 200;
-	order: 200;
-}
-
 ::-moz-selection {
 	background-color: #00726b;
 	text-shadow: none;
@@ -1415,10 +1504,6 @@ ol.is-list {
 
 :focus {
 	outline: 1px dotted #ddd;
-}
-
-.zDev {
-	z-index: 900;
 }
 
 html {
@@ -1451,10 +1536,7 @@ html {
 	flex-shrink: 1;
 	-ms-flex-preferred-size: 80%;
 	flex-basis: 80%;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-direction: column;
-	flex-direction: column;
+	display: block;
 	overflow-x: hidden;
 	overflow-y: auto;
 	z-index: 202;
@@ -1484,7 +1566,7 @@ html {
 	display: inline-flex;
 	position: relative;
 	border-radius: 8px;
-	border: 1px solid #e6e6e6;
+	border: 1px solid #e2e2e2;
 	padding: 4px 15px;
 	margin: 5px 0;
 	vertical-align: middle;
@@ -1493,7 +1575,7 @@ html {
 	line-height: 1.5;
 	font-weight: 400;
 	color: #222222;
-	background-color: #fff;
+	background-color: #fbfbfb;
 	box-shadow: none;
 	cursor: pointer;
 	-webkit-user-select: none;
@@ -1531,7 +1613,7 @@ html {
 .btn.is-disabled:focus,
 .btn:disabled:focus,
 .btn[aria-disabled=true]:focus {
-	color: #e6e6e6;
+	color: #e2e2e2;
 	cursor: not-allowed;
 	border-style: dashed;
 	background-color: #ffffff;
@@ -1582,59 +1664,6 @@ html {
 	text-align: center;
 }
 
-.btn-group {
-	vertical-align: middle;
-	display: -ms-inline-flexbox;
-	display: inline-flex;
-}
-
-.btn-group .btn {
-	margin-right: 0px;
-	margin-left: -1px;
-	float: left;
-	position: relative;
-	z-index: 200;
-}
-
-.btn-group .btn:not(:first-child):not(:last-child) {
-	border-radius: 0;
-}
-
-.btn-group .btn:first-child:not(:last-child) {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
-.btn-group .btn:last-child:not(:first-child) {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
-.btn-group .btn:first-of-type {
-	margin-left: 5px;
-}
-
-.btn-group .btn:last-of-type {
-	margin-right: 5px;
-}
-
-.btn-group .btn:hover,
-.btn-group .btn:active,
-.btn-group .btn.is-selected,
-.btn-group .btn:focus {
-	z-index: 202;
-}
-
-.btn-group .btn.is-disabled,
-.btn-group .btn.is-disabled:hover,
-.btn-group .btn.is-disabled:focus {
-	z-index: 200;
-}
-
-.btn-group .btn:focus {
-	z-index: 203;
-}
-
 .btn--primary {
 	color: #f4f4f4;
 	background-color: #00a59c;
@@ -1677,7 +1706,7 @@ html {
 	background-color: #52ece3;
 }
 
-.btn-group .btn--primary {
+.input-group .btn--primary {
 	z-index: 201;
 }
 
@@ -1722,7 +1751,7 @@ html {
 	box-shadow: none;
 }
 
-.btn-group .btn--edit {
+.input-group .btn--edit {
 	z-index: 201;
 }
 
@@ -1767,7 +1796,7 @@ html {
 	box-shadow: none;
 }
 
-.btn-group .btn--danger {
+.input-group .btn--danger {
 	z-index: 201;
 }
 
@@ -2343,6 +2372,7 @@ i.i--hint {
 }
 
 i.i--portal {
+	background-color: #00a59c;
 	background-color: var(--portal-color);
 	color: #fff;
 }
@@ -2476,6 +2506,63 @@ i.i--small img {
 	height: 85%;
 }
 
+.delete {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	position: relative;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-ms-flex-positive: 0;
+	flex-grow: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	-ms-flex-item-align: center;
+	align-self: center;
+	background-color: rgba(10, 10, 10, 0.2);
+	border: none;
+	border-radius: 8px;
+	outline: none;
+	height: 1.2rem;
+	width: 1.2rem;
+	vertical-align: top;
+}
+
+.delete::before,
+.delete::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	transform-origin: center center;
+	background-color: white;
+}
+
+.delete::before {
+	height: 2px;
+	width: 0.75em;
+}
+
+.delete::after {
+	height: 0.75em;
+	width: 2px;
+}
+
+.delete:hover,
+.delete:focus {
+	background-color: rgba(10, 10, 10, 0.3);
+}
+
+.delete:active {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
 .topbar {
 	display: -ms-flexbox;
 	display: flex;
@@ -2537,21 +2624,6 @@ i.i--small img {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.searchbar {
-	padding: 0;
-	max-height: 0px;
-	overflow: hidden;
-	float: right;
-	margin: 0 15px 0 0;
-	transition: all 1s ease;
-}
-
-.searchbar.is-active {
-	padding: 0;
-	max-height: 300px;
-	overflow: visible;
-}
-
 .popup-overlay {
 	position: fixed;
 	top: 0;
@@ -2569,7 +2641,8 @@ i.i--small img {
 	z-index: 99;
 }
 
-.popup-overlay.is-active {
+.popup-overlay.is-active,
+.popup.is-active ~ .popup-overlay {
 	pointer-events: auto;
 	opacity: 0.7;
 	background: rgba(255, 255, 255, 0.9);
@@ -3144,7 +3217,28 @@ html {
 	flex-wrap: wrap;
 	-ms-flex-align: center;
 	align-items: center;
-	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.bar-group--left {
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+}
+
+.bar-group--center {
+	-ms-flex-pack: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bar-group--right {
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+}
+
+.bar-group--right:first-child {
+	margin-left: auto;
 }
 
 .bar-group > * {
@@ -3161,24 +3255,12 @@ html {
 	width: auto;
 }
 
-.input-group .btn,
-.input-group .select {
-	margin-left: -1px;
-	max-width: 25vw;
-}
-
 .input-group:not(.input-group--block) {
 	-ms-flex-flow: row;
 	flex-flow: row;
 }
 
 .input-group:not(.input-group--block) .label {
-	width: auto;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	float: left;
-	max-width: 25vw;
-	box-shadow: none;
 	border-width: 1px;
 }
 
@@ -3190,6 +3272,7 @@ html {
 	border-left-width: 0;
 }
 
+.input-group:not(.input-group--block) .label,
 .input-group:not(.input-group--block) .select,
 .input-group:not(.input-group--block) .input,
 .input-group:not(.input-group--block) .btn,
@@ -3198,6 +3281,8 @@ html {
 .input-group:not(.input-group--block) > .radio,
 .input-group:not(.input-group--block) > .check,
 .input-group:not(.input-group--block) .option-group {
+	margin-left: -1px;
+	max-width: 25vw;
 	width: auto;
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -3295,9 +3380,25 @@ html {
 	margin-bottom: 5px;
 }
 
+.input-group .select,
+.input-group .input,
 .input-group .btn,
-.input-group .select {
+.input-group .switch,
+.input-group .textarea,
+.input-group > .radio,
+.input-group > .check,
+.input-group .option-group {
 	margin-top: -1px;
+}
+
+.input-group *:not(:last-child) {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.input-group *:not(:first-child) {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
 }
 
 .no-mobile {
